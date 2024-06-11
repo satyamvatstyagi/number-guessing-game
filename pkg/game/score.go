@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 )
 
 func saveHighScore(attempts int) {
@@ -30,8 +31,27 @@ func displayHighScores() {
 
 	fmt.Println("High Scores:")
 	scanner := bufio.NewScanner(file)
+	highScores := make(map[string]bool)
+
+	// Read each line of the file
 	for scanner.Scan() {
-		fmt.Println(scanner.Text())
+		score := scanner.Text()
+		highScores[score] = true
+	}
+
+	// Sort the high scores map
+	// Extract the keys
+	keys := make([]string, 0, len(highScores))
+	for k := range highScores {
+		keys = append(keys, k)
+	}
+
+	// Sort the keys
+	sort.Strings(keys)
+
+	// Display the high scores
+	for _, k := range keys {
+		fmt.Printf("%s\n", k)
 	}
 
 	if err := scanner.Err(); err != nil {
