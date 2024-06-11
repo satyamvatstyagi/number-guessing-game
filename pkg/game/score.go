@@ -7,6 +7,7 @@ import (
 	"sort"
 )
 
+// Save the high score to a file
 func saveHighScore(attempts int) {
 	file, err := os.OpenFile("highscores.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
@@ -21,6 +22,7 @@ func saveHighScore(attempts int) {
 	}
 }
 
+// Display the high scores
 func displayHighScores() {
 	file, err := os.Open("highscores.txt")
 	if err != nil {

@@ -5,6 +5,8 @@ import (
 	"math/rand"
 )
 
+// PlayGame starts the number guessing game with the given range of numbers and tracks the high score.
+// The player is also given hints after 5 attempts.
 func PlayGame(min, max int) {
 	target := rand.Intn(max-min+1) + min
 	var guess, attempts int
