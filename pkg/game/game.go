@@ -36,16 +36,40 @@ func PlayGame(min, max int) {
 			break
 		}
 
-		// Provide hint after 5 attempts
+		// Give hints after 5 attempts
 		if attempts >= 5 {
 			if target%2 == 0 {
 				fmt.Println("Hint: The number is even.")
 			} else {
 				fmt.Println("Hint: The number is odd.")
 			}
+			if target%3 == 0 {
+				fmt.Println("Hint: The number is divisible by 3.")
+			}
+			if isPrime(target) {
+				fmt.Println("Hint: The number is a prime number.")
+			}
+			if target > 50 {
+				fmt.Println("Hint: The number is greater than 50.")
+			}
 		}
 	}
 
+	// Save the high score
 	saveHighScore(attempts)
+
+	// Display the high scores
 	displayHighScores()
+}
+
+func isPrime(n int) bool {
+	if n <= 1 {
+		return false
+	}
+	for i := 2; i*i <= n; i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+	return true
 }
