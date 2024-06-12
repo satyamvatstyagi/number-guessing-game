@@ -11,6 +11,7 @@ func PlayGame(min, max int) {
 	target := rand.Intn(max-min+1) + min
 	var guess, attempts int
 
+	// Play the game until the player guesses the number correctly or quits the game
 	for {
 		fmt.Printf("Enter your guess (%d-%d): ", min, max)
 		_, err := fmt.Scan(&guess)
@@ -62,6 +63,7 @@ func PlayGame(min, max int) {
 	displayHighScores()
 }
 
+// isPrime checks if a number is a prime number
 func isPrime(n int) bool {
 	if n <= 1 {
 		return false
