@@ -18,6 +18,6 @@ There are several ways to run the application:
 
 3. **Using Docker Image from Docker Hub:**
    - Pull the Docker image from Docker Hub using this command: `docker pull satyamvatstyagi/number-guessing-game-image:1.0.0`
-   - Run the container using the command: `docker run -tid --name number-guessing-game-container number-guessing-game-image:1.0.0`
+   - Run the container using the command: `docker run -tid --name number-guessing-game-container satyamvatstyagi/number-guessing-game-image:1.0.0`
    - Exec into the container: check the container ID via `docker ps` and run `docker exec -ti <container_id> sh`
    - Run the application via command: `./number-guessing-game`
