@@ -2,6 +2,8 @@ package game
 
 import "testing"
 
+// TestIsPrime is a unit test function that tests the isPrime function.
+// It checks if the isPrime function correctly identifies prime and non-prime numbers.
 func TestIsPrime(t *testing.T) {
 	// Test prime numbers
 	if !isPrime(2) {
